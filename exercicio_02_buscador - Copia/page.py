@@ -14,7 +14,7 @@ class Page:
     def getUrlsFromUrl(self, url):
         urls = []
         try: 
-            response = requests.get(url)
+            response = requests.get(url, verify=False, timeout=10)
 
             if isPageAlredySaved(url):
                 htmlString = getHtml(url)
@@ -27,14 +27,19 @@ class Page:
             anchorTags = html.find_all('a')
             for anchor in anchorTags:
                 url = anchor.get('href')
-                if not url == None:
+                if url not in urls and not url == None:
                     if url and url[0] == '/':
-                        urls.append('https://g1.globo.com'+url)
+                        urls.append('https://www.bbc.com'+url)
+                    elif url.startswith("http"):
+                        urls.append(url)
+            
             return urls
         
         except requests.exceptions.MissingSchema:
             return []
         except requests.exceptions.InvalidSchema:
+            return []
+        except requests.exceptions.ConnectionError:
             return []
     
     def instantiateInsideUrls(self, accessedUrls):

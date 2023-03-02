@@ -47,7 +47,10 @@ def sortDictionary(dictionary):
     
 
 def getOcurrencesSearchTerms(searchTerms, url):
-    response = requests.get(url)
+    try:
+        response = requests.get(url, verify=False, timeout=10)
+    except requests.exceptions.ConnectTimeout:
+        return []
     html = BeautifulSoup(response.text, 'html.parser')
     return html.find_all(string=lambda text: searchTerms in text)
 
