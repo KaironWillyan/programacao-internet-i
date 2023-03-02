@@ -14,7 +14,7 @@ class Page:
     def getUrlsFromUrl(self, url):
         urls = []
         try: 
-            response = requests.get(url, verify=False, timeout=10)
+            response = requests.get(url)
 
             if isPageAlredySaved(url):
                 htmlString = getHtml(url)
@@ -30,7 +30,7 @@ class Page:
                 if url not in urls and not url == None:
                     if url and url[0] == '/':
                         urls.append('https://www.bbc.com'+url)
-                    elif url.startswith("http"):
+                    elif url.startswith("https://www.bbc.com/portuguese"):
                         urls.append(url)
             
             return urls
@@ -40,6 +40,10 @@ class Page:
         except requests.exceptions.InvalidSchema:
             return []
         except requests.exceptions.ConnectionError:
+            return []
+        except requests.exceptions.ReadTimeout:
+            return []
+        except requests.exceptions.SSLError: 
             return []
     
     def instantiateInsideUrls(self, accessedUrls):
