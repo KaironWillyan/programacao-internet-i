@@ -61,8 +61,8 @@ def rankUrls(accessedUrls, searchTerms):
     for i in range(len(accessedUrlsArray)):
         occurrences = getOcurrencesSearchTerms(searchTerms, accessedUrlsArray[i])  
 
-        if len(occurrences) > 0 and len(occurrences[0]) != 0:
-            attRanking(accessedUrls, accessedUrlsArray[i], len(occurrences) * 10)
+        if len(occurrences) > 0 and len(occurrences[0]) != 0: #critério de exclusão
+            attRanking(accessedUrls, accessedUrlsArray[i], len(occurrences) * 10) #critério positivo de ranqueamento
         else:
             accessedUrls.pop(accessedUrlsArray[i])
 
