@@ -1,0 +1,28 @@
+* {
+    font-family: Arial;
+}
+
+.radial {
+    width: 400px;
+    height: 200px;
+    background-image: radial-gradient(circle at 10% 1%,#e66465, #9198e5);
+}
+
+.cone {
+    width: 400px;
+    height: 200px;
+    background: conic-gradient(red, orange, yellow, green, blue);
+}
+
+.rainbow {
+    width: 400px;
+    height: 200px;
+    background: linear-gradient(to right, 
+    rgb(255, 0, 0), 
+    rgb(255, 165, 0), 
+    rgb(251, 255, 0),
+    rgb(10, 255, 2),
+    rgb(0, 0, 255),
+    rgb(255, 3, 255)
+    );
+}
