@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" class="css">
+</head>
+<body>
+
+    <p id="content">Take my hand, stay Joanne
+        Heaven's not ready for you
+        Every part of my aching heart
+        Needs you more than the angels do
+        Girl, where do you think you're goin'?
+        Where do you think you're goin'
+        Goin', girl?
+        Girl, where do you think you're goin'?
+        Where do you think you're goin'
+        Goin', girl?
+        If you could I know that you'd stay
+        We both know things don't work that way
+        I promised I wouldn't say goodbye
+        So I grin and my voice gets thin
+        Girl, where do you think you're goin'?
+        Where do you think you're goin'?
+        Goin', girl?
+        Girl, where do you think you're goin'?
+        Where do you think you're goin'?
+        Goin', girl?
+        Honestly, I know where you're goin'
+        And baby, you're just movin' on
+        And I still love you even if I can't
+        See you anymore can't wait to see you soar
+        Girl, where do you think you're goin'?
+        Where do you think you're goin'
+        Goin', girl?
+        Girl, where do you think you're goin'?
+        Where do you think you're goin'
+        Goin', girl?</p>
+
+
+    <button id="ligar">ligar</button>
+    <button id="desligar">desligar</button>
+    
+    <script>
+
+        const buttonLigar = document.getElementById('ligar')
+        const buttonDesligar = document.getElementById('desligar')
+
+        const tagsComTexto = document.querySelectorAll("*:not(:empty):not(:has(*))");
+
+        const buttons = Array.from(document.getElementsByTagName("button"))
+
+        const ligar = buttonLigar.addEventListener("click", () => {
+            document.body.style.backgroundColor = 'white'
+
+            tagsComTexto.forEach((tag) => {
+                tag.style.color = 'black'
+            });
+
+            buttons.forEach((button) => {
+                button.style.backgroundColor = 'white'
+            })
+
+        })
+
+        
+        const desligar = buttonDesligar.addEventListener("click", () => {
+            document.body.style.backgroundColor = 'black'
+
+            tagsComTexto.forEach((tag) => {
+                tag.style.color = 'white'
+            });
+
+            
+            buttons.forEach((button) => {
+                button.style.backgroundColor = 'black'
+            })
+        })
+
+        
+    </script>
+
+</body>
+</html>

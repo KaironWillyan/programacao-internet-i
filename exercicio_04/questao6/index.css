@@ -1,0 +1,9 @@
+body {
+    background-color: white;
+}
+
+#content {
+    width: 230px;
+    margin: auto;
+    text-align: center;
+}

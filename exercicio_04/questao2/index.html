@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" class="css">
+</head>
+<body>
+    
+    <div id="content">
+        <p>Hello, World!</p>
+    </div>
+
+
+    <button>
+        clique aqui
+    </button>
+
+
+    <script>
+    
+        //Exemplo com getElementsByTagName 
+        const buttonD = document.getElementsByTagName("button")[0]
+    
+        //Exemplo com getElementById
+        const divContent = document.getElementById("content")
+        let show = true
+    
+        //Continuação - Exemplo com getElementsByTagName - Adicionando eventListener no elemento pego com getElementsByTagName
+        buttonD.addEventListener("click", (event)=> {
+    
+        ////Continuação - Exemplo com getElementById - Modificando o estilo no elemento pego com getElementsByTagName
+            show ? divContent.style.display = "block" : divContent.style.display = "none" 
+    
+            show = !show
+        })
+    
+    
+    </script>
+</body>
+
+
+
+
+</html>
