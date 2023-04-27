@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    background-color: rgb(100, 57, 218);
+    text-align: center;
+    color: white;
+    padding: 0.5rem;
+}
+
+h2 {
+    background-color: rgb(144, 120, 211);
+    color: white;
+    padding: .2rem;
+    padding-left: 2rem;
+}
+
+ul, ol {
+    margin-block: 1rem; 
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
